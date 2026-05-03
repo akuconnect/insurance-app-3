@@ -1,0 +1,290 @@
+/* ===============================
+   COMPANY THEME VARIABLES
+================================*/
+
+:root {
+  --royal-blue: #0d47a1;
+  --royal-blue-light: #1565c0;
+  --bg: #f4f7fb;
+  --white: #ffffff;
+  --text: #222;
+  --disabled: #cfd8dc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+.app {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===============================
+   HEADER
+================================*/
+
+.header {
+  background: var(--royal-blue);
+  color: white;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.header-logo {
+  height: 60px;
+  width: auto;
+  filter: brightness(0) invert(1);
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+
+/* ===============================
+   CONTAINER
+================================*/
+
+.container {
+  flex: 1;
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* ===============================
+   GRID
+================================*/
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* ===============================
+   CARD BUTTONS
+================================*/
+
+.card {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 24px 14px;
+  text-align: center;
+  cursor: pointer;
+  transition: .25s;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, .08);
+  border: 2px solid transparent;
+}
+
+.card i {
+  font-size: 34px;
+  color: var(--royal-blue);
+  margin-bottom: 10px;
+}
+
+.card img {
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.card .title {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--royal-blue-light);
+}
+
+/* ===============================
+   DISABLED STATE
+================================*/
+
+.card.disabled {
+  background: #fafafa;
+  cursor: not-allowed;
+  opacity: .6;
+}
+
+.card.disabled i {
+  color: #90a4ae;
+}
+
+.soon {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #607d8b;
+}
+
+/* ===============================
+   DESKTOP RESPONSIVE
+================================*/
+
+@media(min-width:700px) {
+  .header-title {
+    font-size: 28px;
+  }
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .card {
+    padding: 30px 16px;
+  }
+  .card i {
+    font-size: 40px;
+  }
+  .card img {
+    height: 50px;
+  }
+}
+
+/* ===============================
+   FOOTER
+================================*/
+
+.footer {
+  background: var(--royal-blue);
+  color: #fff;
+  text-align: center;
+  padding: 14px 10px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .3px;
+}
+
+/* ===============================
+   PDF PRINT TARGET
+================================*/
+
+#pdf-print-target {
+  position: fixed;
+  left: -9999px;
+  top: 0;
+  width: 794px;
+  background: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  color: #1a1f36;
+  z-index: -1;
+  overflow: visible;
+}
+
+#pdf-print-target .ph {
+  background: #c062c4;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#pdf-print-target .ph h1 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+#pdf-print-target .gold-bar {
+  background: #eef1f9;
+  height: 4px;
+}
+
+#pdf-print-target .info-band {
+  background: #f4f6fd;
+  padding: 6px 20px;
+  border-bottom: 2px solid #cdd5ee;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+#pdf-print-target .info-row {
+  display: grid;
+  gap: 4px 10px;
+  padding: 5px 0;
+  height: 50px;
+}
+
+#pdf-print-target .info-row-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#pdf-print-target .info-row-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+#pdf-print-target .info-row-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+#pdf-print-target .info-divider {
+  height: 1px;
+  background: #cdd5ee;
+  margin: 0 -20px;
+}
+
+#pdf-print-target .info-cell .ic-lbl {
+  font-size: .52rem;
+  font-weight: 700;
+  color: #5a6380;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+}
+
+#pdf-print-target .info-cell .ic-val {
+  font-size: .68rem;
+  font-weight: 700;
+  color: #1a1f36;
+  margin-top: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 20px;
+}
+
+#pdf-print-target .p-subtot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 16px;
+  font-size: 1rem;
+  font-weight: 700;
+  background: #c062c4;
+  color: #ffffff;
+  /* border-top: 1px solid #c062c4;
+  border-bottom: 1px solid #c062c4;
+  border-left: 4px solid #c062c4; */
+}
+
+#pdf-print-target .p-subtot span:last-child {
+  text-align: right;
+  min-width: 90px;
+  white-space: nowrap;
+}
+
+#pdf-print-target .p-disclaimer {
+  padding: 8px 20px;
+  background: #f5f7fd;
+  font-size: .55rem;
+  color: #7880a0;
+  text-align: center;
+  font-style: italic;
+  border-top: 1px solid #cdd5ee;
+  line-height: 1.6;
+}
